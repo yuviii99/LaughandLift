@@ -26,10 +26,22 @@
         window.location.href = 'forgive.html';
     }
     function moveButton() {
-        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
-        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
-        document.getElementById('noButton').style.left = `${x}px`;
-        document.getElementById('noButton').style.top = `${y}px`;
+    var button = document.getElementById('noButton');
+    var x = Math.random() * (window.innerWidth - button.offsetWidth);
+    var y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+    // Check if the button is going out of the right edge
+    if (x + button.offsetWidth > window.innerWidth) {
+        x = window.innerWidth - button.offsetWidth;
     }
+
+    // Check if the button is going out of the bottom edge
+    if (y + button.offsetHeight > window.innerHeight) {
+        y = window.innerHeight - button.offsetHeight;
+    }
+
+    button.style.left = `${x}px`;
+    button.style.top = `${y}px`;
+}
 </script>
 </html>
