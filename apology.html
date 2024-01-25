@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Are You Still Mad?</title>
+</head>
+<body>
+    <div id="ask" class="container">
+        <div >
+            <h1 class = "header_text">You still mad at me skinny girl?</h1>
+        </div>
+        <div class="gif_container">
+            <img src="assets/mad.gif">
+        </div>
+        <div class = "buttons">
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Yes</button>
+            <button class="btn" id="yesButton" onclick="nextPage()">No</button>
+        </div>
+    </div>
+</body>
+<script>
+    function nextPage(){
+        window.location.href = 'forgive.html';
+    }
+    function moveButton() {
+        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+        document.getElementById('noButton').style.left = `${x}px`;
+        document.getElementById('noButton').style.top = `${y}px`;
+    }
+</script>
+</html>
